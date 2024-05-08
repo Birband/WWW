@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-_yxon(+#!%q^g%h#%-55!apw%z^5i43$j8ggg^pdtyb(2qplhl
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '51.83.130.122'
+    '51.83.130.122',
+    '127.0.0.1'
 ]
 
 # Application definition

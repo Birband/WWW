@@ -5,11 +5,13 @@
     <div id="game-main">
         <h2>{{ game.title }}</h2>
         <!-- get image -->
+        <div class="cover">
         {% if game.cover %}
         <img src="/media/{{game.cover}}" alt="{{ game.title }}" />
         {% else %}
         <img src="/media/covers/none.png" alt="{{ game.title }}" />
         {% endif %}
+        </div>
         <p class="game-score">{{ game.rating }}</p>
         {% load custom_tags %}
         {% if user|has_group:'admin' %}
