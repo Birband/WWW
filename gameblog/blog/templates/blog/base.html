@@ -13,8 +13,8 @@
         {% load custom_tags %}
         {% if user|has_group:'admin' %}
             <a class="menu-admin" href="/admin">Panel Administracyjny</a>
-            <a class="menu-admin" href="/create_game">Utwórz post</a>
-            <a class="menu-admin" href="/create_genre">Utwórz gatunek</a>
+            <a class="menu-admin" href="/create_game">Dodaj Grę</a>
+            <a class="menu-admin" href="/create_genre">Dodaj Gatunek</a>
         {% endif %}
         <!-- search field - on submit go to home-->
         <form method="GET" action="/" id="search">
