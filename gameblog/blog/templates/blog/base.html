@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <title>{% block title %} Base Name {% endblock %}</title>
+</head>
+<body>
+    <div id="menu">
+        <h1>Game Blog</h1>
+        <a href="/">Strona Główna</a>
+        <!-- if user is part of group admin -->
+        {% load custom_tags %}
+        {% if user|has_group:'admin' %}
+            <a class="menu-admin" href="/admin">Panel Administracyjny</a>
+            <a class="menu-admin" href="/create_game">Utwórz post</a>
+            <a class="menu-admin" href="/create_genre">Utwórz gatunek</a>
+        {% endif %}
+        <!-- search field - on submit go to home-->
+        <form method="GET" action="/" id="search">
+            <input type="text" name="search" placeholder="Szukaj...">
+            <input type="submit" value="Szukaj">
+        </form>
+        {% if user.is_authenticated %}
+        <a class="account" href="/logout">Wyloguj</a>
+        {% else %}
+        <a class="account" href="/login">Logowanie</a>
+        <a class="account" href="/register">Rejestracja</a>
+        {% endif %}
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+<footer>
+    <p>&copy; 2024 Game Blog</p>
+</footer>
+</html>

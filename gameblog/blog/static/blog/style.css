@@ -1,0 +1,447 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+#menu {
+    display: inline-flex;
+    width: 100%;
+    background-color: black;
+}
+
+#menu a {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: #FFBA00;
+}
+
+.account {
+    background-color: #FFBA00;
+    color: black !important;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+#menu h1 {
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+#search {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+#search input[type="text"] {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
+#search input[type="submit"] {
+    padding: 5px 10px 5px 10px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: darkgrey;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#search input[type="submit"]:hover {
+    background-color: #FFBA00;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.tile {
+    background-color: lightgray;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px 3px darkgray;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+}
+
+.tile-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.tile-info a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    background-color: #FFBA00;
+    border-radius: 5px;
+    width: 50%;
+    font-weight: bold;
+}
+
+.tile-info a:hover {
+    background-color: grey;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 25px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 3px darkgray;
+}
+
+#login label {
+    font-weight: bold;
+    margin: 5px;
+    justify-content: left;
+    width: 100%;
+}
+
+#login input[type="text"], #login input[type="password"] {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    margin: 5px;
+}
+
+#login input[type="submit"] {
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFBA00;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login input[type="submit"]:hover {
+    background-color: darkgrey;
+}
+
+#game {
+    display: flex;
+    width: 80%;
+    box-shadow: 0 0 10px 3px darkgray;
+    border-radius: 5px;
+}
+
+#game-main {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 20px;
+}
+
+#game h2 {
+    display: flex;
+    margin: 0;
+    padding: 10px;
+}
+
+#game img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#summary {
+    margin-top: 60px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+
+.game-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+}
+
+
+#comment-section {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 80px 10px;
+    width: 80%;
+}
+
+#comment-section h2 {
+    margin: 0;
+    padding: 10px;
+}
+
+.comment {
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+
+.comment h3 {
+    margin: 0 0 10px 0;
+}
+
+.comment h4 {
+    margin: 0;
+}
+
+.comment p {
+    margin-top: 5px 0 0 0;
+}
+.comment-body {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10px;
+}
+
+.comment-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+/* comment form looking like an actual comment */
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+#comment-form label {
+    font-weight: bold;
+    margin: 5px;
+    justify-content: left;
+    width: 100%;
+}
+
+#comment-form input[type="text"], #comment-form textarea {
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    width: 100%;
+    resize: none;
+    border: none;
+    margin: 5px;
+}
+
+.comment-form-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+#comment-form input[type="number"] {
+    
+    /* black square with centered input */
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 25px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+#comment-form input[type="submit"]{
+    border: none;
+    background-color: #FFBA00;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.comment-form-add {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#comment-form input[type="submit"]:hover, #comment-form input[type="submit"]:hover a:hover{
+    background-color: darkgrey;
+}
+
+.comment-form-delete {
+    background-color: red;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.comment-form-update {
+    background-color: #FFBA00;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+}
+
+.comment-form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-error, .genre-error {
+    color: red;
+    font-weight: bold;
+}
+
+.game-form-buttons {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.game-form-edit {
+    background-color: #FFBA00;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.game-form-delete {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    width: 100%;
+    text-decoration: none;
+}
+
+#home-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 10px 50px 10px;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 70px;
+    overflow: auto;
+}
+
+.game-edit-genre {
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: gray;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.game-edit-genre:hover {
+    background-color: black;
+}
+
+.game-genre {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: gray;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+}

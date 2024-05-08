@@ -1,0 +1,103 @@
+{% extends 'blog/base.html' %}
+{% block title %}Game{% endblock %}
+{% block content %}
+<div id="game">
+    <div id="game-main">
+        <h2>{{ game.title }}</h2>
+        <!-- get image -->
+        {% if game.cover %}
+        <img src="/media/{{game.cover}}" alt="{{ game.title }}" />
+        {% else %}
+        <img src="/media/covers/none.png" alt="{{ game.title }}" />
+        {% endif %}
+        <p class="game-score">{{ game.rating }}</p>
+        {% load custom_tags %}
+        {% if user|has_group:'admin' %}
+        <p>Dodaj/Usuń gatunki gry:</p>        
+        <div class="genres">
+        {% for genre in all_genres %}
+        <a class="game-edit-genre" href="{% url 'add_genre' game_id genre.name %}">{{genre.name}}</a>
+        {% endfor %}
+        </div>
+        <div class="game-form-buttons">
+            <a class="game-form-edit" href="{% url 'edit_game' game_id %}">Edytuj</a>
+            <a class="game-form-delete" href="{% url 'delete_game' game_id %}">Usuń</a>
+        </div>
+        {% endif %}
+    </div>
+    <div id="summary">
+        <h2>Opis:</h2>
+        <p>{{ game.description }}</p>
+        <h2>Data Wydania:</h2>
+        <p>{{ game.release_date }}</p>
+        <h2>Deweloper:</h2>
+        <p>{{ game.developer }}</p>
+        <h2>Wydawca:</h2>
+        <p>{{ game.publisher }}</p>
+        <h2>Gatunki</h2>
+        <div class="genres">
+        {% for genre in genres %}
+        <p class="game-genre">
+        {{ genre.name }}
+        </p>
+        {% endfor %}
+        </div>
+
+    </div>
+</div>
+<div id="comment-section">
+    <h2>Komentarze</h2>
+    {% if user.is_authenticated %}
+    <form method="POST" id="comment-form">
+        {% csrf_token %}
+        <div class="comment-form-inputs">
+            {% for field in form %}
+            {% if field.name == 'rating' %}
+            <!-- Add min and max attributes to the input field -->
+            <input type="number" name="{{ field.name }}" min="1" max="10" value="{{ field.value|default_if_none:'1' }}">
+            {% if field.errors %}
+            <ul>
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% else %}
+            {{ field }}
+            {% if field.errors %}
+            <ul>
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% if already_posted %}
+        <div class="comment-form-buttons">
+            <input class="comment-form-update" type="submit" value="Zaktualizuj" />
+            <!-- delete button -->
+            <a class="comment-form-delete" href="{% url 'delete' post_id %}">Usuń</a>
+        </div>
+        {% else %}
+        <input class="comment-form-add" type="submit" value="Dodaj komentarz" />
+        {% endif %}
+    </form>
+    {% endif %}
+    {% for post in posts %}
+    {% if not user == post.author %}
+    <div class="comment">
+        <div class="comment-body">
+            <h3>Użytkownik: {{ post.author }}</h3>
+            <p>{{ post.content }}</p>
+            <h4>Data publikacji:</h4>
+            <p>{{ post.created_at }}</p>
+        </div>
+        <p class="comment-score">{{ post.rating }}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

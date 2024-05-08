@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block title %}Create Game{% endblock %}
+{% block content %}
+<form method="POST" id="login">
+    {% csrf_token %}
+    <h2>Dodaj Gatunek</h2>
+    {% if already_exists %}
+    <p class="genre-error">Taki gatunek już istnieje</p>
+    {% endif %}
+    <p>
+        <label for="name">Nazwa:</label>
+        <input type="text" name="name" id="name" value="{{ name }}">
+    </p>
+    <input type="submit" value="Utwórz">
+</form>
+{% endblock %}
