@@ -445,3 +445,7 @@ footer {
     text-decoration: none;
     color: white;
 }
+
+#create-game {
+    margin-bottom: 80px;
+}
